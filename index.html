@@ -62,6 +62,15 @@
                     <p>{{ book.author }}</p>
                 </li>
             </ul>
+
+            <h3>Favorites books</h3>
+            <ul>
+                <li v-for="book in filteredBooks" :class="{ fav: book.isFav }" @click="toggleIsFav(book)"> 
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
         </div>
 
         <button @click="toggleShowBooks">
